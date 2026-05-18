@@ -11,7 +11,6 @@ index.html、style.css、script.js放在同一目录
 ## 配置主进程
 在项目根目录创建 main.js，内容如下：
 ```json
-{
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 app.disableHardwareAcceleration();
@@ -40,8 +39,9 @@ app.whenReady().then(() => {
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
 });
-}
+```
 打开 package.json，替换原有内容为以下配置：
+```json
 {
   "name": "kubi",
   "version": "1.0.0",
@@ -64,5 +64,6 @@ app.on('window-all-closed', () => {
     }
   }
 }
+```
 ## 打包应用
-npm run build
+`npm run build`
