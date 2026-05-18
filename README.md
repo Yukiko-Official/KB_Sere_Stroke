@@ -4,10 +4,10 @@
 安装 Node.js
 index.html、style.css、script.js放在同一目录
 ## 初始化npm
-npm init -y
+`npm init -y`
 ## 安装依赖
-npm install electron --save-dev
-npm install electron-builder --save-dev
+`npm install electron --save-dev`
+`npm install electron-builder --save-dev`
 ## 配置主进程
 在项目根目录创建 main.js，内容如下：
 const { app, BrowserWindow } = require('electron');
