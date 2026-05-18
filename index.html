@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>枯笔</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sidebar">
+    <input type="text" class="search-box" placeholder="搜索笔记…" id="searchInput">
+    <button class="sidebar-btn" id="newNoteSide">
+        <span>+</span> 新建笔记
+    </button>
+    <button class="sidebar-btn" id="importSide">
+        <span>↑</span> 导入 Markdown
+    </button>
+    <div class="note-list" id="noteList"></div>
+    <div class="notes-empty" id="emptyTip">还没有笔记</div>
+</div>
+
+<div class="main-area">
+    <div class="top-bar">
+        <div class="toolbar-left">
+            <!-- 导入/导出 -->
+            <div class="dropdown">
+                <button class="dropdown-btn">导入/导出</button>
+                <div class="dropdown-menu">
+                    <button id="importBtn">导入 MD</button>
+                    <button id="exportMdBtn">导出 MD</button>
+                    <button id="exportImgBtn">导出图片</button>
+                    <button id="exportPdfBtn">导出 PDF</button>
+                </div>
+            </div>
+
+            <!-- 设置 -->
+            <div class="dropdown">
+                <button class="dropdown-btn">设置</button>
+                <div class="dropdown-menu">
+                    <button id="setBgBtn">设置笔记背景</button>
+                    <button id="clearBgBtn">清除笔记背景</button>
+                </div>
+            </div>
+
+            <button class="toolbar-btn" id="saveBtn">💾</button>
+            <button class="toolbar-btn" id="delBtn">🗑️</button>
+        </div>
+    </div>
+
+    <div class="editor-container" id="editorBox">
+        <div class="editor-empty">请新建或导入一篇笔记</div>
+    </div>
+
+    <div class="status-bar">
+        <span id="line">Ln 1</span>
+        <span>Markdown</span>
+        <span id="size">UTF-8 | 0.0 KB</span>
+    </div>
+</div>
+
+<input type="file" id="hideFile" accept=".md" style="display:none;">
+<input type="file" id="bgFile" accept="image/*" style="display:none;">
+
+<script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/color-thief-browser@2.0.2/dist/color-thief.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
